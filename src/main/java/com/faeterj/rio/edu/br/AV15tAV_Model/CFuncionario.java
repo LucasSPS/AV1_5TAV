@@ -17,18 +17,25 @@ public class CFuncionario {
     private String nome;
     
     //Criar carteirinha
-    /*public CFuncionario(String plano, int qntDependentes, String empresa, String dtNascimento, String nome) {
+    public CFuncionario(String _plano, int _qntDependentes, String _empresa, String _dtNascimento, String _nome) {
         
-        plano = plano;
-        qntDependentes = qntDependentes;
-        empresa = empresa;
-        dtNascimento = dtNascimento;
-        nome = nome;
-    }*/
-    
-    public String CriaCarteirinha()
+        plano = _plano;
+        qntDependentes = _qntDependentes;
+        empresa = _empresa;
+        dtNascimento = _dtNascimento;
+        nome = _nome;
+    }
+       
+    public boolean CriaCarteirinha()
     {
-        return "COD115-445";
+        if(nome!="")
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }       
     }
 
     public String getPlano() {

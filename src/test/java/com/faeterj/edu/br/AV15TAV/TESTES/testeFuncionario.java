@@ -17,23 +17,18 @@ public class testeFuncionario {
     @Test
     public void testRegistroCarteirinha()
     {
-        CFuncionario func1 = new CFuncionario();
-        func1.setEmpresa("Eletromidia");
+        CFuncionario func1 = new CFuncionario("Brasil-Alpha-2A", 0, "Eletromidia", "15/02/1974", "Ricardo Messias Junior");
+        /*func1.setEmpresa("Eletromidia");
         func1.setNome("Ricardo Messias Junior");
         func1.setPlano("Brasil-Alpha-2A");
         func1.setQntDependentes(0);
-        func1.setDtNascimento("15/02/1974");
+        func1.setDtNascimento("15/02/1974");*/
 
         
-        String numCarteirinha = func1.getNumCarteirinha();
+        boolean resultado = func1.CriaCarteirinha();
         
-        assertNotNull(numCarteirinha);
+        assertTrue(resultado);
 
-
-        /*Assert.assertEquals("Jane Doe", newMember.getName());
-        Assert.assertEquals("jane.doe@mailinator.com", newMember.getEmail());
-        Assert.assertEquals("2125552121", newMember.getPhoneNumber());
-        return;*/
     }
     
 }
