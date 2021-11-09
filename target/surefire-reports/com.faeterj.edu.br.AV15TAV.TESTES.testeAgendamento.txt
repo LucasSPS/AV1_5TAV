@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: com.faeterj.edu.br.AV15TAV.TESTES.testeAgendamento
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.078 s <<< FAILURE! - in com.faeterj.edu.br.AV15TAV.TESTES.testeAgendamento
+agendarExameRaioX  Time elapsed: 0.067 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+	at com.faeterj.edu.br.AV15TAV.TESTES.testeAgendamento.agendarExameRaioX(testeAgendamento.java:50)
+
