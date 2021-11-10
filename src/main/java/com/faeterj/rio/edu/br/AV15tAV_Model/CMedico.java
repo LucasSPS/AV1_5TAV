@@ -12,4 +12,11 @@ public class CMedico {
     public String nome;
     public String especialidade;
     public String numCrm;
+    
+    public CMedico(String _nome, String _especialidade, String _numCrm)
+    {
+        nome = _nome;
+        especialidade = _especialidade;
+        numCrm = _numCrm;
+    }
 }

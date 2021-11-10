@@ -18,12 +18,39 @@ public class testeFuncionario {
     public void testRegistroCarteirinha()
     {
         CFuncionario func1 = new CFuncionario("Brasil-Alpha-2A", 0, "Eletromidia", "15/02/1974", "Ricardo Messias Junior");
-        /*func1.setEmpresa("Eletromidia");
-        func1.setNome("Ricardo Messias Junior");
-        func1.setPlano("Brasil-Alpha-2A");
-        func1.setQntDependentes(0);
-        func1.setDtNascimento("15/02/1974");*/
+        
+        boolean resultado = func1.CriaCarteirinha();
+        
+        assertTrue(resultado);
 
+    }
+    
+    @Test
+    public void testEmpresaVazia()
+    {
+        CFuncionario func1 = new CFuncionario("Brasil-Beta-1A", 2, "", "21/06/1997", "Adalberto Soarez");
+        
+        boolean resultado = func1.CriaCarteirinha();
+        
+        assertTrue(resultado);
+
+    }
+    
+    @Test
+    public void testPlanoNaoEncontrado()
+    {
+        CFuncionario func1 = new CFuncionario("Brasil-GAMA-6A", 1, "Tico Teco T.I", "15/02/1974", "Fernanda Guimaraes");
+        
+        boolean resultado = func1.CriaCarteirinha();
+        
+        assertTrue(resultado);
+
+    }
+    
+    @Test
+    public void testMaisDe5Dependentes()
+    {
+        CFuncionario func1 = new CFuncionario("Brasil-Beta-1A", 6, "Chico TI", "10/07/1989", "Gabriel Almeida");
         
         boolean resultado = func1.CriaCarteirinha();
         

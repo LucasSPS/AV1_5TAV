@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.faeterj.edu.br.AV15TAV.TESTES.testeFuncionario" time="0.027" tests="1" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.faeterj.edu.br.AV15TAV.TESTES.testeFuncionario" time="0.061" tests="1" errors="0" skipped="0" failures="1">
   <properties>
     <property name="java.specification.version" value="16"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,9 +15,9 @@
     <property name="user.country" value="BR"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-16.0.2\bin"/>
-    <property name="sun.java.command" value="C:\Users\Lucas\AppData\Local\Temp\surefire15910523900463464339\surefirebooter14701170715651570321.jar C:\Users\Lucas\AppData\Local\Temp\surefire15910523900463464339 2021-11-09T12-24-27_934-jvmRun1 surefire8415015269625672224tmp surefire_06845653804467430959tmp"/>
+    <property name="sun.java.command" value="C:\Users\Lucas\AppData\Local\Temp\surefire5492139369586517731\surefirebooter5642009433599845647.jar C:\Users\Lucas\AppData\Local\Temp\surefire5492139369586517731 2021-11-09T19-21-32_864-jvmRun1 surefire5909602881118658444tmp surefire_013492227760298810604tmp"/>
     <property name="jdk.debug" value="release"/>
-    <property name="test" value="com.faeterj.edu.br.AV15TAV.TESTES.testeFuncionario#testRegistroCarteirinha"/>
+    <property name="test" value="com.faeterj.edu.br.AV15TAV.TESTES.testeFuncionario#testMaisDe5Dependentes"/>
     <property name="surefire.test.class.path" value="C:\Users\Lucas\Documents\NetBeansProjects\AV1_5TAV\target\test-classes;C:\Users\Lucas\Documents\NetBeansProjects\AV1_5TAV\target\classes;C:\Users\Lucas\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.4.2\junit-jupiter-api-5.4.2.jar;C:\Users\Lucas\.m2\repository\org\apiguardian\apiguardian-api\1.0.0\apiguardian-api-1.0.0.jar;C:\Users\Lucas\.m2\repository\org\opentest4j\opentest4j\1.1.1\opentest4j-1.1.1.jar;C:\Users\Lucas\.m2\repository\org\junit\platform\junit-platform-commons\1.4.2\junit-platform-commons-1.4.2.jar;C:\Users\Lucas\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.4.2\junit-jupiter-engine-5.4.2.jar;C:\Users\Lucas\.m2\repository\org\junit\platform\junit-platform-engine\1.4.2\junit-platform-engine-1.4.2.jar;C:\Users\Lucas\.m2\repository\org\mockito\mockito-all\1.10.19\mockito-all-1.10.19.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="C:\Users\Lucas"/>
@@ -31,7 +31,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\Lucas\AppData\Local\Temp\surefire15910523900463464339\surefirebooter14701170715651570321.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\Lucas\AppData\Local\Temp\surefire5492139369586517731\surefirebooter5642009433599845647.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="16.0.2+7-67"/>
@@ -57,5 +57,9 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="60.0"/>
   </properties>
-  <testcase name="testRegistroCarteirinha" classname="com.faeterj.edu.br.AV15TAV.TESTES.testeFuncionario" time="0.017"/>
+  <testcase name="testMaisDe5Dependentes" classname="com.faeterj.edu.br.AV15TAV.TESTES.testeFuncionario" time="0.054">
+    <failure message="expected: &lt;true&gt; but was: &lt;false&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+	at com.faeterj.edu.br.AV15TAV.TESTES.testeFuncionario.testMaisDe5Dependentes(testeFuncionario.java:57)
+]]></failure>
+  </testcase>
 </testsuite>

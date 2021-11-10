@@ -6,7 +6,9 @@ package com.faeterj.edu.br.AV15TAV.TESTES;
  */
 
 import com.faeterj.rio.edu.br.AV15tAV_Model.CAgendamento;
+import com.faeterj.rio.edu.br.AV15tAV_Model.CMedico;
 import java.time.LocalDate;
+import java.time.Month;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -22,48 +24,79 @@ public class testeAgendamento {
     
     @Test
     public void agendarConsultaOrtopedista() {
-        LocalDate dataAgendamento = LocalDate.now();
+        LocalDate dataAgendamento = LocalDate.of(2021, 11, 15);
         
         //Arrange
-        CAgendamento agendarConsulta = new CAgendamento(dataAgendamento, "Ortopedista", "Gabriel Souza", "Madureira", "123456");
+        CMedico medico = new CMedico("Marcos Ximenes", "ortopedia", "crm-45741");        
+        CAgendamento agendarConsulta = new CAgendamento(dataAgendamento, medico.especialidade, medico.nome, "copacabana", "123456");
            
         //Act
         String resultado = agendarConsulta.AgendamentoConsulta();
         
         //Assert
-        assertTrue(resultado=="CON123");
+        assertTrue(resultado!=null);
         
     }
     
     @Test
-    public void agendarExameRaioX() 
-    {
-        LocalDate dataAgendamento = LocalDate.now();
+    public void agendarConsultaComCarteirinhaInvalida() {
+        LocalDate dataAgendamento = LocalDate.of(2021, 11, 15);
         
         //Arrange
-        CAgendamento agendarExame = new CAgendamento(dataAgendamento, "Madureira", "888888", "Raio-X");
+        CMedico medico = new CMedico("Renata Fernanda", "cardiologia", "crm-11284");        
+        CAgendamento agendarConsulta = new CAgendamento(dataAgendamento, medico.especialidade, medico.nome, "Meier", "");
+           
+        //Act
+        String resultado = agendarConsulta.AgendamentoConsulta();
+        
+        //Assert
+        assertTrue(resultado!=null);
+        
+    }
+    
+    @Test
+    public void agendarConsultaPediatra() {
+        LocalDate dataAgendamento = LocalDate.of(2021, 9, 15);
+        
+        //Arrange
+        CAgendamento agendarConsulta = new CAgendamento(dataAgendamento, "pediatria", "", "Madureira", "123456");
+           
+        //Act
+        String resultado = agendarConsulta.AgendamentoConsulta();
+        
+        //Assert
+        assertTrue(resultado!=null);
+    }
+    
+    @Test
+    public void agendarExameRaioXComDataAnteriorAtual() 
+    {
+        LocalDate dataAgendamento = LocalDate.of(2020, 05, 16);
+        
+        //Arrange
+        CAgendamento agendarExame = new CAgendamento(dataAgendamento, "piedade", "32580", "Raio-X");
            
         //Act
         String resultado = agendarExame.AgendamentoExame();
         
         //Assert
-        assertTrue(resultado=="EXA555");
+        assertTrue(resultado!=null);
         
     }
     
+    @Test
     public void agendarInternação() 
     {
-        LocalDate dataAgendamento = LocalDate.now();
+        LocalDate dataAgendamento = LocalDate.of(2022, 05, 16);
         
         //Arrange
-        CAgendamento agendarInternação = new CAgendamento(dataAgendamento, "Madureira", "888888", "Internação CTI", "Rodrigo Martins", "Paciente com Pneumonia e risco de morte");
-           
+        CAgendamento agendarInternação = new CAgendamento("cascadura", dataAgendamento, "148752", "Internação CTI", "Paciente com Pneumonia apto para cirurgia");
+        
         //Act
         String resultado = agendarInternação.AgendamentoInternação();
         
         //Assert
-        assertTrue(resultado=="EXA555");
-        
+        assertTrue(resultado!=null);       
     }
 }
     

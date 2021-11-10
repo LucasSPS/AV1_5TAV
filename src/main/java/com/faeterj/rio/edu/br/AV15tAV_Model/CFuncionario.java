@@ -28,63 +28,35 @@ public class CFuncionario {
        
     public boolean CriaCarteirinha()
     {
-        if(nome!="")
-        {
-            return true;
-        }
-        else
+        if(nome.isBlank() || qntDependentes>5 || empresa.isBlank() || dtNascimento.isBlank())
         {
             return false;
-        }       
+        }
+        
+        switch(plano)
+        {
+            case "Brasil-Alpha-1A":
+                break;
+            
+            case "Brasil-Alpha-2A":
+                break;
+            
+            case "Brasil-Alpha-3A":
+                break;
+            
+            case "Brasil-Beta-1A":
+                break;
+            
+            case "Brasil-Beta-2A":
+                break;
+            
+            default:
+                return false;
+        }
+        
+        
+        return true;
+        
     }
-
-    public String getPlano() {
-        return plano;
-    }
-
-    public void setPlano(String plano) {
-        this.plano = plano;
-    }
-
-    public int getQntDependentes() {
-        return qntDependentes;
-    }
-
-    public void setQntDependentes(int qntDependentes) {
-        this.qntDependentes = qntDependentes;
-    }
-
-    public String getEmpresa() {
-        return empresa;
-    }
-
-    public void setEmpresa(String empresa) {
-        this.empresa = empresa;
-    }
-
-    public String getNumCarteirinha() {
-        return numCarteirinha;
-    }
-
-    public void setNumCarteirinha(String matricula) {
-        this.numCarteirinha = matricula;
-    }
-
-    public String getDtNascimento() {
-        return dtNascimento;
-    }
-
-    public void setDtNascimento(String dtNascimento) {
-        this.dtNascimento = dtNascimento;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-    
-    
+  
 }

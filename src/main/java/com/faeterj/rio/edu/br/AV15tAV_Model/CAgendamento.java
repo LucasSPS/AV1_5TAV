@@ -21,6 +21,7 @@ public class CAgendamento {
     public String matriculaUsuario;
     public String procedimento;
     public String motivo; 
+    LocalDate diaAtual = LocalDate.now();
 
     //Consulta
     public CAgendamento(LocalDate _dataAgendamento, String _especialidade, String _nomeMedico, String _local, String _matriculaUsuario) {
@@ -28,8 +29,7 @@ public class CAgendamento {
         especialidade = _especialidade;
         nomeMedico = _nomeMedico;
         local = _local;
-        matriculaUsuario = _matriculaUsuario;
-        
+        matriculaUsuario = _matriculaUsuario;      
     }
     
     //Exame
@@ -41,26 +41,110 @@ public class CAgendamento {
     }
     
     //Internação
-    public CAgendamento(LocalDate _dataAgendamento, String _local, String _matriculaUsuario, String _procedimento, String NomeMedico, String _motivo) {
+    public CAgendamento(String _local, LocalDate _dataAgendamento, String _matriculaUsuario, String _procedimento, String _motivo) {
         dataAgendamento = _dataAgendamento;
         local = _local;
         matriculaUsuario = _matriculaUsuario;
         procedimento = _procedimento;
-        motivo = _motivo;
-        nomeMedico = nomeMedico;
+        motivo = _motivo;       
     }
     
     public String AgendamentoConsulta () {
+       LocalDate diaAtual = LocalDate.now();
+        
+        switch(especialidade.toLowerCase())
+        {
+            case "cardiologia":
+                break;
+            case "ortopedia":
+                break;
+            case "reumatologia":
+                break;
+            case "urologia":
+                break;
+            case "dermatologia":
+                break;
+            case "clinica medica":
+                break;
+            default:
+                return null;
+        }
+        
+        if(dataAgendamento.isBefore(diaAtual) || nomeMedico=="" || matriculaUsuario=="")
+        {
+            return null;
+        }
+        switch(local.toLowerCase())
+        {
+            case "madureira":
+                break;
+            case "barra da tijuca":
+                break;
+            case "copacabana":
+                break;
+            case "meier":
+                break;
+            default:
+                return null;
+        }
         
         return "CON123";
-    }
+        }
+        
     
     public String AgendamentoExame () {
+        
+        if(dataAgendamento.isBefore(diaAtual) || matriculaUsuario=="")
+        {
+            return null;
+        }
+        
+        switch(local.toLowerCase())
+        {
+            case "santa cruz":
+                break;
+            case "piedade":
+                break;
+            case "quintino":
+                break;
+            default:
+                return null;
+        }
+        
+        switch(procedimento.toLowerCase())
+        {
+            case "raio-x":
+                break;               
+            case "hemograma":
+                break;
+            case "ultra-ssonografia":
+                break;
+            case "eletrocardiograma":
+                break;
+            default:
+                return null;
+        }
         
         return "EXA123";
     }
     
     public String AgendamentoInternação () {
+        if(dataAgendamento.isBefore(diaAtual) || matriculaUsuario=="" || procedimento=="" || motivo=="")
+        {
+            return null;
+        }
+        
+        switch(local.toLowerCase())
+        {
+            case "cascadura":
+                break;
+            case "barra da tijuca":
+                break;
+            case "bangu":
+                break;
+            default:
+                return null;
+        }
         
         return "INT123";
     }
@@ -69,77 +153,4 @@ public class CAgendamento {
     public static void main(String[] args) {
         
     }
-    
-
-    
-    
-    
-    
-    
-    
-    
-    public LocalDate getDataAgendamento() {
-        return dataAgendamento;
-    }
-
-    public void setDataAgendamento(LocalDate dataAgendamento) {
-        this.dataAgendamento = dataAgendamento;
-    }
-
-    public String getServico() {
-        return servico;
-    }
-
-    public void setServico(String servico) {
-        this.servico = servico;
-    }
-
-    public boolean isDisponivel() {
-        return disponivel;
-    }
-
-    public void setDisponivel(boolean disponivel) {
-        this.disponivel = disponivel;
-    }
-
-    public String getEspecialidade() {
-        return especialidade;
-    }
-
-    public void setEspecialidade(String especialidade) {
-        this.especialidade = especialidade;
-    }
-
-    public String getNomeMedico() {
-        return nomeMedico;
-    }
-
-    public void setNomeMedico(String nomeMedico) {
-        this.nomeMedico = nomeMedico;
-    }
-
-    public String getCodAgendamento() {
-        return codAgendamento;
-    }
-
-    public void setCodAgendamento(String codAgendamento) {
-        this.codAgendamento = codAgendamento;
-    }
-
-    public String getLocal() {
-        return local;
-    }
-
-    public void setLocal(String local) {
-        this.local = local;
-    }
-
-    public String getMatriculaUsuario() {
-        return matriculaUsuario;
-    }
-
-    public void setMatriculaUsuario(String matriculaUsuario) {
-        this.matriculaUsuario = matriculaUsuario;
-    }
-    
 }
